@@ -8,21 +8,21 @@ export class Routes {
         app.get('/', (req: Request, res: Response) => {
             res.status(200).send({
                 message: 'GET request successfulll!!!!'
-            })
-        })
+            });
+        });
 
         // User Routes Configured
         this.userRoutes(app, new UserController);
-        
+
         app.route('*')
         .all(( req: Request, res: Response) => {
             res.status(404).send({
-                message: "invalid request"
-            })
-        })
+                message: 'invalid request'
+            });
+        });
     }
 
-    private userRoutes( app: Application, 
+    private userRoutes( app: Application,
                         users: UserController) {
 
         app.route('/users')

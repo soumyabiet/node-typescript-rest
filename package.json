@@ -1,7 +1,7 @@
 {
   "name": "node-tsc-rest",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minimalistic boilerplate to start Node REST API development in Express & TypeScript.",
   "main": "index.js",
   "dependencies": {
     "@types/cors": "^2.8.4",

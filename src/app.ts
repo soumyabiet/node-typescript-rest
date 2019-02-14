@@ -26,14 +26,13 @@ class App {
         this.app.use(initialize());
 
         this.route.register(this.app);
-        // this.databaseConfig();
+        this.databaseConfig();
     }
 
     private databaseConfig(): void {
-        const sequelize = new Sequelize({
-            database: 'node_rest',
-            username: 'postgres',
-            password: 'postgres'
+        const sequelize = new Sequelize('postgres://postgres:postgres@localhost:5432/node_rest', {
+            dialect: 'postgres',
+            operatorsAliases: false
         });
 
         sequelize.authenticate()

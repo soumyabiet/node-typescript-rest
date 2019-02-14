@@ -1,5 +1,8 @@
 import { json, urlencoded } from 'body-parser';
 import * as express from 'express';
+import { initialize } from 'passport';
+import * as Sequelize from 'sequelize';
+
 import { Routes } from './routes/routes';
 
 class App {
@@ -19,8 +22,23 @@ class App {
         this.app.use(json());
         this.app.use(urlencoded({ extended: false }));
         this.app.use(express.static('public'));
+        // Passport initialize
+        this.app.use(initialize());
 
         this.route.register(this.app);
+        // this.databaseConfig();
+    }
+
+    private databaseConfig(): void {
+        const sequelize = new Sequelize({
+            database: 'node_rest',
+            username: 'postgres',
+            password: 'postgres'
+        });
+
+        sequelize.authenticate()
+        .then(( ) => console.log('Connection has been established successfully.'))
+        .catch( err => console.log( 'Unable to connect database ', err ));
     }
 }
 

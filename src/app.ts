@@ -36,7 +36,7 @@ class App {
         });
 
         sequelize.authenticate()
-        .then(( ) => console.log('Connection has been established successfully.'))
+        .then(() => console.log('Connection has been established successfully.'))
         .catch( err => console.log( 'Unable to connect database ', err ));
     }
 }

@@ -10,7 +10,7 @@ Minimalistic boilerplate to jump-start node based REST API in [Express](https://
 In order to use this boilerplate, ensure you have [Git](https://git-scm.com/downloads) and [Node.js](https://nodejs.org/en/) installed. To start use following commands:
 
 ```sh
-git clone https://github.com/soumyabiet/Node-Typescript-REST.git node-tsc-rest
+git clone https://github.com/soumyabiet/node-typescript-rest.git
 cd node-tsc-rest
 npm install
 npm start
